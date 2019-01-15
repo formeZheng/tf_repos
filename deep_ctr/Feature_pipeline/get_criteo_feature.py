@@ -117,7 +117,7 @@ def preprocess(datadir, outdir):
     for i in continous_features:
         output.write("{0} {1}\n".format('I' + str(i), i))
     dict_sizes = dicts.dicts_sizes()
-    categorial_feature_offset = [dists.num_feature]
+    categorial_feature_offset = [dists.num_feature + 1]
     for i in range(1, len(categorial_features) + 1):
         offset = categorial_feature_offset[i - 1] + dict_sizes[i - 1]
         categorial_feature_offset.append(offset)
